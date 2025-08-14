@@ -83,23 +83,30 @@ return min_or_max result
 ```
 #### Practice: Fixed size
 EASY
-- [Maximum Average Subarray I (Fixed window size)](https://leetcode.com/problems/maximum-average-subarray-i)
+- [Maximum Average Subarray I (Fixed window size)](https://leetcode.com/problems/maximum-average-subarray-i/description)
 
 MEDIUM
-- [Find ALl Anagrams in a String](leetcode.com/problems/find-all-anagrams-in-a-string)
-- [Permutation in String](https://leetcode.com/problems/permutation-in-string)
-- [Maximum Sum of Distinct Subarrays With Length K]
+- [Find ALl Anagrams in a String](leetcode.com/problems/find-all-anagrams-in-a-string/description)
+- [Permutation in String](https://leetcode.com/problems/permutation-in-string/description)
+- [Maximum Sum of Distinct Subarrays With Length K](https://leetcode.com/problems/maximum-sum-of-distinct-subarrays-with-length-k/description)
 
 HARD
-- [Substring with Concatenation of All Words]
+- [Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/description)
 
 #### Practice: Dynamic size
 MEDIUM
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)
-- [Longest Repeating character replacement]
+- [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement)
 - [fruits into baskets (at most K distinct), min subarray length ≥ target]
 - [Minimum Size Subarray Sum]
 - [Max Consecutive Ones III]
 
 HARD
-- Minimum Window Substrung
+- Minimum Window Substring
+
+### 3. Fast and slow pointers
+[Short overview](https://www.youtube.com/watch?v=b139yf7Ik-E&t=178s)
+[More detailed with exercises](https://www.youtube.com/watch?v=XWyXy2aNrXM)
+#### Practice
+EASY
+- [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
