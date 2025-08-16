@@ -3,6 +3,7 @@ An ongoing repository with resources I used to prepare for coding assessments.
 
 ## Resources
 [Leetcode patterns](https://seanprashad.com/leetcode-patterns)  
+[Grind os based on how much time you have](https://www.techinterviewhandbook.org/grind75/?weeks=26)  
 [14 week free blog](https://veedaily19.substack.com/p/master-dsa-in-14-weeks?open=false#§week-two-pointers-and-fast-and-slow-pointers)  
 [Algomaster](https://algomaster.io/practice/dsa-patterns)  
 [Algomaster's other account](https://youtu.be/DjYZk8nrXVY?si=c-yEpxZ9WHwaxSq7)  
@@ -104,9 +105,43 @@ MEDIUM
 HARD
 - Minimum Window Substring
 
-### 3. Fast and slow pointers
-[Short overview](https://www.youtube.com/watch?v=b139yf7Ik-E&t=178s)
-[More detailed with exercises](https://www.youtube.com/watch?v=XWyXy2aNrXM)
+### 3. Fast and slow pointers / Linked Lists
+[Short overview](https://www.youtube.com/watch?v=b139yf7Ik-E&t=178s)  
+[More detailed with exercises](https://www.youtube.com/watch?v=XWyXy2aNrXM)  
+[Floyd's algorithm - used in MEDIUM questions](https://www.youtube.com/watch?v=PvrxZaH_eZ4)  
+Floyd's cycle detection algorithm: Distance from meeting node to start of cycle node = Distance from starting node to start of cycle node  
+- Space complexity: O(n)
+- Time complexity: O(1)
 #### Practice
 EASY
 - [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
+- [Happy Number](https://leetcode.com/problems/happy-number/)
+- [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/description)
+- [Reverse Linked List (try iteratively and recursively)](https://leetcode.com/problems/reverse-linked-list/description)
+- [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list)
+
+MEDIUM
+- [Find the Duplicate Number - Floyd's algorithm](https://leetcode.com/problems/find-the-duplicate-number/description)
+- [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii)
+- [Reorder List](https://leetcode.com/problems/reorder-list/description)
+- [Add Two Numbers](https://leetcode.com/problems/add-two-numbers)
+- [Circular Array Loop]
+
+  #### Template code
+  Don't look until you have completed the practice questions above.
+  ```python
+  slow, fast = head, head
+  while True:
+      if fast == None or fast.next == None:
+          return None # Return None if end of Linked List met
+      slow = slow.next
+      fast = fast.next.next
+      if slow == fast:
+          break # When two pointers meet, there is a cycle
+      
+  # Find the start node of the cycle using Floyd's algorithm
+  while True:
+      if head == slow:
+          return head
+      head = head.next
+  ```
