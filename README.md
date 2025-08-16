@@ -1,30 +1,32 @@
 # dsa-preparation
-An ongoing repository with resources I used to prepare for coding assessments.
+This is an ongoing repository with helpful resources to prepare for coding assessments.  
+For every pattern, I have selected a set of LeetCode questions. Some of the medium questions are quite hard, so you’re not expected to finish them all in a single day. Feel free to complete as many as you’d like — the problems are arranged in a helpful order.
 
 ## Resources
 [Leetcode patterns](https://seanprashad.com/leetcode-patterns)  
-[Grind os based on how much time you have](https://www.techinterviewhandbook.org/grind75/?weeks=26)  
-[14 week free blog](https://veedaily19.substack.com/p/master-dsa-in-14-weeks?open=false#§week-two-pointers-and-fast-and-slow-pointers)  
-[Algomaster](https://algomaster.io/practice/dsa-patterns)  
+[Grind based on how much time you have](https://www.techinterviewhandbook.org/grind75/?weeks=26)  
+[14 week plan - free blog](https://veedaily19.substack.com/p/master-dsa-in-14-weeks?open=false#§week-two-pointers-and-fast-and-slow-pointers)  
+[Algomaster's dsa patterns](https://algomaster.io/practice/dsa-patterns)  
 [Algomaster's other account](https://youtu.be/DjYZk8nrXVY?si=c-yEpxZ9WHwaxSq7)  
 [Neetcode](https://neetcode.io/practice)  
 [Roadmap overview](https://roadmap.sh/datastructures-and-algorithms)  
 [Useful tips](https://aman.ai/code/)
 
 ## Patterns
-Found that Algomaster is the best YT channel for tutorials on concepts. Do one pattern per day.  
+I like how Algomaster's YT channel includes when to use each pattern, what the pattern is and questions you can complete on that pattern - their vids are mainly the concept vids attached.
+
 ### Day 1: Two pointers
 [YT: Two Pointers concept](https://www.youtube.com/watch?v=QzZ7nmouLTI)
 
-#### Types of pointers
+#### 1.1 Types of pointers
 1. Converging pointers - use case: palindromes/reverse
 2. Parallel pointers - use case: sliding window
 3. Trigger based pointers - use case: linked lists (e.g. obtaining the fourth node from the back)
 
-#### When to use?
+#### 1.2 When to use?
 Questions that contain arrays, strings and linked lists.  
 Keywords to look out for: arrays that are SORTED, questions that ask to **return indices/pairs**.
-#### Questions to practice:
+#### 1.3 Questions to practice:
 
 EASY
 - Contains duplicate
@@ -46,8 +48,8 @@ HARD
 
 ### Day 2: Sliding window
 [YT: Sliding Window concept](https://www.youtube.com/watch?v=y2d0VHdvfdc&t=81s)  
-[Full list of problems with complexity analysis](https://aman.ai/code/sliding-window)
-#### Fixed window code template
+[Full list of sliding window problems with complexity analysis](https://aman.ai/code/sliding-window)
+#### 2.1 Fixed window code template
 ```python
 window_sum = 0
 max_result = 0 # or other computation
@@ -64,7 +66,7 @@ for i in range(k, len(arr)):
 
 return max_result # or other computation
 ```
-#### Variable window code template
+#### 2.2 Variable window code template
 ```python
 initialise window_state (sum, count, frequency map, etc.)
 left = 0
@@ -82,7 +84,7 @@ for right in range(len(arr)):
 
 return min_or_max result
 ```
-#### Practice: Fixed size
+#### 2.3 Practice: Fixed size
 EASY
 - [Maximum Average Subarray I (Fixed window size)](https://leetcode.com/problems/maximum-average-subarray-i/description)
 
@@ -94,25 +96,29 @@ MEDIUM
 HARD
 - [Substring with Concatenation of All Words](https://leetcode.com/problems/substring-with-concatenation-of-all-words/description)
 
-#### Practice: Dynamic size
+#### 2.4 Practice: Dynamic size
 MEDIUM
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)
 - [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement)
-- [fruits into baskets (at most K distinct), min subarray length ≥ target]
+- ([fruits into baskets (at most K distinct), min subarray length ≥ target]
 - [Minimum Size Subarray Sum]
 - [Max Consecutive Ones III]
 
 HARD
-- Minimum Window Substring
+- Minimum Window Substring)
 
-### 3. Fast and slow pointers / Linked Lists
+### Day 3/4: Fast and slow pointers / Linked Lists
 [Short overview](https://www.youtube.com/watch?v=b139yf7Ik-E&t=178s)  
 [More detailed with exercises](https://www.youtube.com/watch?v=XWyXy2aNrXM)  
-[Floyd's algorithm - used in MEDIUM questions](https://www.youtube.com/watch?v=PvrxZaH_eZ4)  
+
+#### 3.1 Floyd's algorithm
+[Floyd's algorithm - used in MEDIUM questions](https://www.youtube.com/watch?v=PvrxZaH_eZ4)    
+
 Floyd's cycle detection algorithm: Distance from meeting node to start of cycle node = Distance from starting node to start of cycle node  
 - Space complexity: O(n)
 - Time complexity: O(1)
-#### Practice
+
+#### 3.2 Practice
 EASY
 - [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 - [Happy Number](https://leetcode.com/problems/happy-number/)
@@ -127,27 +133,27 @@ MEDIUM
 - [Add Two Numbers](https://leetcode.com/problems/add-two-numbers)
 - [Circular Array Loop]
 
-  #### Template code
-  Don't look until you have completed the practice questions above.
+#### 3.3 Template code
+Don't look until you have completed the practice questions above. No spoilers!
 
-  ##### Find the start of a linked list cycle
-  ```python
-  slow, fast = head, head
-  while True:
-      if fast == None or fast.next == None:
-          return None # Return None if end of Linked List met
-      slow = slow.next
-      fast = fast.next.next
-      if slow == fast:
-          break # When two pointers meet, there is a cycle
-      
-  # Find the start node of the cycle using Floyd's algorithm
-  while True:
-      if head == slow:
-          return head
-      head = head.next
-  ```
-##### Merge two Linked Lists together
+##### 3.3.1 Find the start of a linked list cycle
+```python
+slow, fast = head, head
+while True:
+    if fast == None or fast.next == None:
+        return None # Return None if end of Linked List met
+    slow = slow.next
+    fast = fast.next.next
+    if slow == fast:
+        break # When two pointers meet, there is a cycle
+    
+# Find the start node of the cycle using Floyd's algorithm
+while True:
+    if head == slow:
+        return head
+    head = head.next
+```
+##### 3.3.2 Merge two Linked Lists together
 ```python
 left, right = list1, list2
 while right:
