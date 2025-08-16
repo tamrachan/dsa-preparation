@@ -129,6 +129,8 @@ MEDIUM
 
   #### Template code
   Don't look until you have completed the practice questions above.
+
+  ##### Find the start of a linked list cycle
   ```python
   slow, fast = head, head
   while True:
@@ -145,3 +147,15 @@ MEDIUM
           return head
       head = head.next
   ```
+##### Merge two Linked Lists together
+```python
+left, right = list1, list2
+while right:
+  temp1, temp2 = left.next, right.next
+  left.next = right
+  right.next = temp1
+
+  left, right = temp1, temp2
+
+return list1
+```
